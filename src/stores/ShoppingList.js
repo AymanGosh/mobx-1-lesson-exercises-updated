@@ -5,8 +5,8 @@ import { Item } from "./Item";
 export class ShoppingList {
   constructor() {
     this.list = [];
-    this.length;
-    // your code here
+    this.length = 0;
+
     makeObservable(this, {
       list: observable,
       length: observable,
