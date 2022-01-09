@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
+import "../App.css";
 
 class Item extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isGoing: false,
+    };
+  }
   checkItem = () => {
     //your code here
   };
@@ -11,9 +18,15 @@ class Item extends Component {
   deleteItem = () => {
     //your code here
   };
+
   render() {
     let item = this.props.item;
-    return <div> {item.name} </div>;
+    return (
+      <div className={item.completed ? "crossed" : null}>
+        <input type="checkbox" value={item.name} />
+        {item.name}
+      </div>
+    );
   }
 }
 
